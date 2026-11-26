@@ -21,7 +21,7 @@ ETLproyecto/
 │   ├── silver/                 # Datos limpios, normalizados e integrados (silver_dataset_integrado.csv)
 │   ├── gold/                   # Tablas analíticas (gold_final.csv y gold_referencia_departamental.csv)
 │   └── warehouse/              # Base de datos SQLite (etl_warehouse.db)
-├── docker/                     # Dockerfile y docker-compose.yml (API + Streamlit)
+├── docker/                     # Dockerfile y docker-compose.yml 
 ├── medallon/
 │   ├── notebooks/              # Análisis exploratorio de datos (eda.ipynb)
 │   └── src/                    # Módulos de transformación (Silver/Gold) y carga al Data Warehouse
