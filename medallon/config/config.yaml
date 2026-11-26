@@ -1,0 +1,39 @@
+project:
+  name: "ETL Desercion en Educacion Superior con Arquitectura Medallon"
+  version: "2.0"
+  description: "Pipeline de extraccion, integracion y transformacion para datos de desercion estudiantil integrando Excel (SPADIES) y API REST."
+  author: "Gabriela Perea, Sahara Narvaez, Juan Pablo"
+  license: "MIT"
+  repository: ""
+  date: "2026-10-16"
+
+paths:
+  data_dir: "data"
+  bronze_dir: "data/bronze"
+  silver_dir: "data/silver"
+  gold_dir: "data/gold"
+  warehouse_db: "data/warehouse/etl_warehouse.db"
+  logs_dir: "medallon/logs"
+  scripts_dir: "medallon/src"
+  extract_dir: "medallon/src/extraction"
+  transform_dir: "medallon/src/transform"
+  load_dir: "medallon/src/load"
+  silver_dataset_integrado: "data/silver/silver_dataset_integrado.csv"
+  gold_final: "data/gold/gold_final.csv"
+
+sources:
+  excel_spadies:
+    path: "data/bronze/articles-415244_recurso_19.xlsx"
+    extracted_dir: "data/bronze/excel_extraido"
+    file_name: "articles-415244_recurso_19.xlsx"
+    file_type: "xlsx"
+    author: "Ministerio de Educacion Nacional - SPADIES"
+
+  api_matriculas:
+    url: "https://www.datos.gov.co/resource/5wck-szir.json"
+    output_dir: "data/bronze/api"
+    author: "Datos Abiertos Colombia"
+
+constants:
+  DATE_FORMAT: "%Y-%m-%d"
+  API_LIMITE_PAGINACION: 50000
